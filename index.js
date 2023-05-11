@@ -1,4 +1,4 @@
-import express  from "express";
+import express, { json }  from "express";
 
 import postRoutes from "./routes/posts.js"
 import userRoutes from "./routes/users.js"
@@ -52,6 +52,11 @@ app.get('/users/:id', (req, res) => {
     res.send('User with unknown ID');
   }
 });
+
+app.get("/test", (req,res)=> {
+
+  res.json("its work")
+})
 
 
 app.listen(process.env.PORT || 8800, () =>{
